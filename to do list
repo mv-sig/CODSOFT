@@ -1,0 +1,19 @@
+class Task:
+    def __init__(self, description, status='Pending'):
+        self.description = description
+        self.status = status
+
+class ToDoList:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, task):
+        self.tasks.append(task)
+
+    def update_task_status(self, task_description, new_status):
+        for task in self.tasks:
+            if task.description == task_description:
+                task.status = new_status
+
+    def get_all_tasks(self):
+        return self.tasks
